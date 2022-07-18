@@ -6,7 +6,11 @@ mathematics 함수를 Unity와 호환되어지도록 만든다는것이 상당�
 
 스스로 공부를 하거나 프로젝트를 진행하는데 도움이 되도록 구성해보았습니다.
 
-ECS는 entt 라이브러리를 사용할 수 있도록 하였고 Framework은 Unity DOTS와 비슷한 System 기반 흉내를 내었습니다.
+<img src="entt.png" width="50%" height="50%"></img>
+
+ECS는 entt 라이브러리를 사용할 수 있도록 설정하였습니다.
+
+Framework은 Unity DOTS와 비슷한 System 기반 흉내를 내었습니다.
 
 딱히 이럴 필요는 없지만, 서버 클라가 어느정도 동일한 패턴을 유지하고자 하는 의도가 있습니다.
 
