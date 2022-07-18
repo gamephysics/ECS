@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{d443f5a2-1c3a-4100-b3f0-9a4aa6a014d9}</ProjectGuid>
+    <RootNamespace>ECS</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)Build\$(SolutionName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Build\$(SolutionName)\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Build\$(SolutionName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Build\$(SolutionName)\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ECS.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>./;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4819</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ECS.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>./;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4819</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ECS.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ECS\Math\ECSMath_AffineTransform.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_bool2.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_bool3.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_bool4.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_double2.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_double3.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_double4.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_float2.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_float3.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_float4.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_int2.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_int3.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_int4.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_quaternion.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_sdv.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_uint2.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_uint3.cpp" />
+    <ClCompile Include="ECS\Math\ECSMath_uint4.cpp" />
+    <ClCompile Include="ECS\World.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ECS.h" />
+    <ClInclude Include="ECS\Timer.h" />
+    <ClInclude Include="ECS\ECSTypeDef.h" />
+    <ClInclude Include="ECS\Math\ECSMath.h" />
+    <ClInclude Include="ECS\Math\ECSMath_AffineTransform.h" />
+    <ClInclude Include="ECS\Math\ECSMath_bool2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_bool2x2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_bool2x3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_bool2x4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_bool3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_bool3x2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_bool3x3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_bool3x4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_bool4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_bool4x2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_bool4x3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_bool4x4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_double2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_double2x2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_double2x3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_double2x4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_double3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_double3x2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_double3x3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_double3x4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_double4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_double4x2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_double4x3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_double4x4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_float2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_float2x2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_float2x3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_float2x4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_float3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_float3x2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_float3x3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_float3x4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_float4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_float4x2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_float4x3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_float4x4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_int2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_int2x2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_int2x3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_int2x4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_int3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_int3x2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_int3x3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_int3x4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_int4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_int4x2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_int4x3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_int4x4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_math.h" />
+    <ClInclude Include="ECS\Math\ECSMath_matrix.h" />
+    <ClInclude Include="ECS\Math\ECSMath_quaternion.h" />
+    <ClInclude Include="ECS\Math\ECSMath_random.h" />
+    <ClInclude Include="ECS\Math\ECSMath_RigidTransform.h" />
+    <ClInclude Include="ECS\Math\ECSMath_sdv.h" />
+    <ClInclude Include="ECS\Math\ECSMath_uint2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_uint2x2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_uint2x3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_uint2x4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_uint3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_uint3x2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_uint3x3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_uint3x4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_uint4.h" />
+    <ClInclude Include="ECS\Math\ECSMath_uint4x2.h" />
+    <ClInclude Include="ECS\Math\ECSMath_uint4x3.h" />
+    <ClInclude Include="ECS\Math\ECSMath_uint4x4.h" />
+    <ClInclude Include="ECS\Math\Geometry\ECSMath_MinMaxAABB.h" />
+    <ClInclude Include="ECS\Math\Geometry\ECSMath_Plane.h" />
+    <ClInclude Include="ECS\System.h" />
+    <ClInclude Include="ECS\World.h" />
+    <ClInclude Include="entt\entt.hpp" />
+    <ClInclude Include="World\FieldWorld.h" />
+    <ClInclude Include="World\System\FieldSystem.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
